@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+<title>A Magical Surprise for Naina ❤️</title>
+<meta name="theme-color" content="#0a0516">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="A personalized birthday surprise experience crafted with love for Naina.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600;1,700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261124_nosound">
+<style>
+/* Critical Photo Layout Rules - Immune to external stylesheet caching */
+.welcome-avatar-wrapper { position: relative; width: 140px; height: 140px; margin: 0 auto 20px; }
+.welcome-avatar-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; border: 4px solid #0f0720; box-shadow: 0 0 25px rgba(255, 117, 140, 0.6); }
+.hero-photo-card { max-width: 320px; margin: 20px auto 26px; border-radius: 24px; overflow: hidden; background: #15092a; }
+.hero-photo-img { width: 100%; height: 340px; object-fit: cover; display: block; }
+.ph-wrapper { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #1a0b33; }
+.ph-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph-card, .ev { opacity: 1 !important; transform: none !important; }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<!-- Top Quick Journey Progress Navigation -->
+<header class="journey-header" id="journeyHeader" hidden>
+  <div class="journey-pills">
+    <a href="#count" class="journey-pill active" data-target="count">⏳ Countdown</a>
+    <a href="#bday" class="journey-pill" data-target="bday" id="navBdayPill">🎂 Cake</a>
+    <a href="#gallery" class="journey-pill" data-target="gallery">📸 Moments</a>
+    <a href="#memories" class="journey-pill" data-target="memories">⏳ Timeline</a>
+    <a href="#letterSec" class="journey-pill" data-target="letterSec">💌 Letter</a>
+    <a href="#couponsSec" class="journey-pill" data-target="couponsSec">🎟️ Coupons</a>
+    <a href="#surprise" class="journey-pill" data-target="surprise">🎁 Gift</a>
+    <a href="#wishSec" class="journey-pill" data-target="wishSec">🌟 Wish</a>
+  </div>
+</header>
+
+<!-- Welcome Screen: Romantic Mobile Hero -->
+<div id="welcome" role="dialog" aria-modal="true" aria-label="Welcome to your birthday surprise">
+  <div class="welcome-card">
+    <div class="welcome-chip">✨ Exclusively For You ✨</div>
+        <!-- Featured Avatar for Naina -->
+    <div class="welcome-avatar-wrapper" style="width: 140px; height: 140px; margin: 0 auto 20px; position: relative;">
+      <div class="welcome-avatar-ring"></div>
+      <img class="welcome-avatar-img" src="assets/images/naina1.jpg?v=2" alt="Naina" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; border: 4px solid #0f0720; box-shadow: 0 0 25px rgba(255, 117, 140, 0.6);" loading="eager" decoding="async">
+      <div class="welcome-avatar-badge">🎂 Birthday Girl ✨</div>
+    </div>
+    <p class="w1 serif">Something Truly Beautiful Is Waiting...</p>
+    <h1 class="w2 grad">A Little Surprise for Naina ❤️</h1>
+    <p class="w-sub">Tap below to unwrap your special journey &amp; memories</p>
+    <button class="btn btn-glow pulse-btn" id="openBtn">
+      <span class="btn-text">Open Your Surprise ✨</span>
+    </button>
+  </div>
+</div>
+
+<main id="app">
+  <!-- Section 1: Countdown & Love Hugs -->
+  <section id="count" class="center rv">
+    <div class="section-tag">✨ CHAPTER 1 OF 7</div>
+    <h2 class="grad">Every Second Brings Us Closer ❤️</h2>
+    <p class="serif sub">Counting down to your special day ❤️</p>
+
+        <!-- Featured Photo Frame in Countdown -->
+    <div class="hero-photo-card" style="max-width: 320px; margin: 20px auto 26px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 117, 140, 0.25);">
+      <div class="hero-photo-glow"></div>
+      <img class="hero-photo-img" src="assets/images/naina2.jpg?v=2" alt="Naina" style="width: 100%; height: 340px; object-fit: cover; display: block;" loading="eager" decoding="async">
+      <div class="hero-photo-caption" style="padding: 12px 16px; font-size: 13px; font-weight: 600; color: #ffd700; background: rgba(14, 6, 28, 0.88); text-align: center;">✨ Dedicated to the girl with the sweetest smile ❤️</div>
+    </div>
+
+    <div class="cards" role="timer" aria-live="polite">
+      <div class="card"><b id="cd-d">00</b><span>DAYS</span></div>
+      <div class="card"><b id="cd-h">00</b><span>HOURS</span></div>
+      <div class="card"><b id="cd-m">00</b><span>MINUTES</span></div>
+      <div class="card"><b id="cd-s">00</b><span>SECONDS</span></div>
+    </div>
+
+    <!-- Actionable Buttons for Countdown -->
+    <div class="action-btn-group">
+      <button class="btn btn-actionable" id="partyBtn">
+        <span>🥳 Celebrate Right Now!</span>
+      </button>
+      <button class="btn btn-actionable btn-secondary" id="hugBtn">
+        <span>🤗 Send a Virtual Hug (<b id="hugCount">18</b>)</span>
+      </button>
+      <button class="btn btn-actionable btn-ghost" id="calBtn">
+        <span>📅 Save to Phone Calendar</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 2: Celebration & Interactive Cake -->
+  <section id="bday" class="center rv" hidden>
+    <div class="section-tag celebration-tag">🎉 CELEBRATION CEREMONY</div>
+    <h1 class="big grad">HAPPY BIRTHDAY, NAINA! 🎂❤️</h1>
+    <p class="sub" id="celebrateMsg"></p>
+
+        <!-- Celebrant Photo Frame -->
+    <div class="bday-photo-badge" style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 16px auto 24px;">
+      <img class="bday-photo-img" src="assets/images/naina4.jpg?v=2" alt="Naina" style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 3px solid #ffd700; box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); display: block;" loading="eager" decoding="async">
+      <div class="bday-photo-label" style="font-size: 14px; font-weight: 700; color: #ffd700; letter-spacing: 0.04em;">💖 Happy Birthday Beautiful 💖</div>
+    </div>
+
+    <!-- Interactive 3D Birthday Cake -->
+    <div class="cake-stage" id="cakeStage">
+      <div class="cake-sparkle-glow"></div>
+      <div class="cake-box" id="cakeElem">
+        <!-- Candles row -->
+        <div class="candles-row" id="candlesRow">
+          <div class="candle">
+            <div class="flame" id="flame1"></div>
+            <div class="wick"></div>
+            <div class="candle-stick"></div>
+          </div>
+          <div class="candle c-mid">
+            <div class="flame" id="flame2"></div>
+            <div class="wick"></div>
+            <div class="candle-stick"></div>
+          </div>
+          <div class="candle">
+            <div class="flame" id="flame3"></div>
+            <div class="wick"></div>
+            <div class="candle-stick"></div>
+          </div>
+        </div>
+        <!-- Cake top tier with icing -->
+        <div class="cake-tier cake-tier-top">
+          <div class="icing-drops"></div>
+          <div class="cake-cream"></div>
+          <div class="cake-strawberries">🍓 🍓 🍓</div>
+        </div>
+        <!-- Cake bottom tier -->
+        <div class="cake-tier cake-tier-bot">
+          <div class="cake-pattern"></div>
+          <div class="cake-frosting"></div>
+        </div>
+        <!-- Cake plate -->
+        <div class="cake-plate"></div>
+      </div>
+      <!-- Virtual served cake slice -->
+      <div class="served-slice" id="servedSlice" hidden>
+        <div class="slice-emoji">🍰</div>
+        <div class="slice-toast">“The sweetest slice for the sweetest people! Made with infinite love ❤️”</div>
+      </div>
+    </div>
+
+    <!-- Actionable Buttons for Cake Ceremony -->
+    <div class="action-btn-group">
+      <button class="btn btn-actionable" id="blowCandlesBtn">
+        <span>💨 Blow Out the Candles!</span>
+      </button>
+      <button class="btn btn-actionable btn-secondary" id="cutCakeBtn">
+        <span>🔪 Cut the Birthday Cake 🍰</span>
+      </button>
+      <button class="btn btn-actionable btn-ghost" id="popBalloonsBtn">
+        <span>🎈 Pop Party Balloons!</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 3: Gallery & Story Reel -->
+  <section id="gallery" class="rv">
+    <div class="center">
+      <div class="section-tag">✨ CHAPTER 2 OF 7</div>
+      <h2 class="grad">Our Favourite Moments 📸</h2>
+      <p class="sub">Double-tap any photo to send love ❤️ or watch as full-screen stories</p>
+
+      <div class="gallery-toolbar">
+        <button class="btn btn-actionable btn-sm" id="storyModeBtn">
+          <span>▶️ Watch as Story Slideshow 📱</span>
+        </button>
+        <button class="btn btn-actionable btn-ghost btn-sm" id="loveAllBtn">
+          <span>💖 Love All Memories</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- Section 4: Timeline of Memories -->
+  <section id="memories" class="rv">
+    <div class="center">
+      <div class="section-tag">✨ CHAPTER 3 OF 7</div>
+      <h2 class="grad">Little Moments, Beautiful Memories ⏳</h2>
+      <p class="sub">Steps along the journey that make our world so much warmer</p>
+    </div>
+    <div class="tl" id="tl"></div>
+  </section>
+
+  <!-- Section 5: The Hand-Written Letter -->
+  <section id="letterSec" class="center rv">
+    <div class="section-tag">✨ CHAPTER 4 OF 7</div>
+    <h2 class="grad">A Letter Written From the Heart 💌</h2>
+    <p class="sub">Tap the wax seal to unfold words meant only for you</p>
+
+    <div class="env" id="env" role="button" tabindex="0" aria-label="Open the letter">
+      <div class="back"></div>
+      <div class="flap"></div>
+      <div class="front"></div>
+      <div class="seal" id="seal">❤️</div>
+    </div>
+
+    <div class="letter-actions" id="letterActions" hidden>
+      <button class="btn btn-actionable btn-sm btn-ghost" id="quickReadBtn">
+        <span>⚡ Show Full Letter Instantly</span>
+      </button>
+      <a class="btn btn-actionable btn-sm btn-whatsapp" id="replyLetterBtn" target="_blank" rel="noopener">
+        <span>💬 Reply to Naina on WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="letter" id="letter">
+      <div class="paper">
+        <div class="paper-header">For Naina ❤️</div>
+        <p id="lt"></p>
+        <div class="paper-footer">Forever &amp; Always ✨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Redeemable Birthday Love Coupons -->
+  <section id="couponsSec" class="center rv">
+    <div class="section-tag">✨ CHAPTER 5 OF 7</div>
+    <h2 class="grad">Special Birthday Love Coupons 🎟️</h2>
+    <p class="sub">Zero expiration date. Tap to redeem anytime throughout the whole year!</p>
+
+    <div class="coupons-grid" id="couponsGrid">
+      <!-- Coupon 1 -->
+      <div class="coupon-card">
+        <div class="coupon-notch top-notch"></div>
+        <div class="coupon-notch bot-notch"></div>
+        <div class="coupon-icon">☕</div>
+        <div class="coupon-body">
+          <span class="coupon-chip">PASS #01</span>
+          <h3 class="coupon-title">Cozy Coffee &amp; Gossip Date</h3>
+          <p class="coupon-desc">Valid for one warm cup of your favourite coffee, endless talks, and 100% undivided listening.</p>
+          <div class="coupon-stamp" hidden>CLAIMED! ✅</div>
+          <button class="btn-coupon-redeem" data-name="Cozy Coffee & Gossip Date">
+            <span>🎟️ Tap to Redeem! ✨</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Coupon 2 -->
+      <div class="coupon-card">
+        <div class="coupon-notch top-notch"></div>
+        <div class="coupon-notch bot-notch"></div>
+        <div class="coupon-icon">🎬</div>
+        <div class="coupon-body">
+          <span class="coupon-chip">PASS #02</span>
+          <h3 class="coupon-title">Movie / Series Marathon VIP</h3>
+          <p class="coupon-desc">You pick the movie, the snacks, and get sole possession of the remote control with zero complaints.</p>
+          <div class="coupon-stamp" hidden>CLAIMED! ✅</div>
+          <button class="btn-coupon-redeem" data-name="Movie/Series Marathon VIP">
+            <span>🎟️ Tap to Redeem! ✨</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Coupon 3 -->
+      <div class="coupon-card">
+        <div class="coupon-notch top-notch"></div>
+        <div class="coupon-notch bot-notch"></div>
+        <div class="coupon-icon">🍦</div>
+        <div class="coupon-body">
+          <span class="coupon-chip">PASS #03</span>
+          <h3 class="coupon-title">Midnight Ice Cream &amp; Long Drive</h3>
+          <p class="coupon-desc">Under the stars, windows down, singing along to our favourite songs with delicious ice cream.</p>
+          <div class="coupon-stamp" hidden>CLAIMED! ✅</div>
+          <button class="btn-coupon-redeem" data-name="Midnight Ice Cream & Long Drive">
+            <span>🎟️ Tap to Redeem! ✨</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Coupon 4 -->
+      <div class="coupon-card">
+        <div class="coupon-notch top-notch"></div>
+        <div class="coupon-notch bot-notch"></div>
+        <div class="coupon-icon">👑</div>
+        <div class="coupon-body">
+          <span class="coupon-chip">PASS #04</span>
+          <h3 class="coupon-title">Queen Day (Zero Responsibilities)</h3>
+          <p class="coupon-desc">24 hours where you call all the shots. Whatever Naina desires today, that is the rule!</p>
+          <div class="coupon-stamp" hidden>CLAIMED! ✅</div>
+          <button class="btn-coupon-redeem" data-name="Queen Day (Zero Responsibilities)">
+            <span>🎟️ Tap to Redeem! ✨</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Coupon 5 -->
+      <div class="coupon-card">
+        <div class="coupon-notch top-notch"></div>
+        <div class="coupon-notch bot-notch"></div>
+        <div class="coupon-icon">🤗</div>
+        <div class="coupon-body">
+          <span class="coupon-chip">PASS #05</span>
+          <h3 class="coupon-title">Unlimited Hugs &amp; Cheer-Up Pass</h3>
+          <p class="coupon-desc">Instant comfort whenever you are tired, overwhelmed, or just need a big warm heartfelt hug.</p>
+          <div class="coupon-stamp" hidden>CLAIMED! ✅</div>
+          <button class="btn-coupon-redeem" data-name="Unlimited Hugs & Cheer-Up Pass">
+            <span>🎟️ Tap to Redeem! ✨</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: The Grand Mystery Box -->
+  <section id="surprise" class="center rv">
+    <div class="section-tag">✨ CHAPTER 6 OF 7</div>
+    <h2 class="grad">One Last Mystery Surprise... 🎁</h2>
+    <p class="sub">Tied with ribbons of gratitude and pure affection</p>
+
+    <div class="gift" id="gift" role="button" tabindex="0" aria-label="Open mystery gift">
+      <div class="gbox"></div>
+      <div class="glid"></div>
+      <div class="gribbon"></div>
+    </div>
+
+    <button class="btn btn-glow pulse-btn" id="giftBtn">
+      <span>🎁 Tap to Unwrap Your Gift! 🎁</span>
+    </button>
+
+    <div class="final" id="final">
+      <div class="final-card">
+        <div class="final-badge">❤️ WITH ALL OUR HEARTS ❤️</div>
+                <div class="final-photo-wrapper" style="width: 140px; height: 140px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #ff758c; box-shadow: 0 0 30px rgba(255, 117, 140, 0.5);">
+          <img class="final-photo-img" src="assets/images/naina9.jpg?v=2" alt="Naina" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="eager" decoding="async">
+        </div>
+        <h2 class="grad">For Naina</h2>
+        <p id="ft"></p>
+        <div class="final-heart-big" id="finalHeart">💖</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Sky Wishing Star & Grand Finale -->
+  <section id="wishSec" class="center rv">
+    <div class="section-tag celebration-tag">🌟 GRAND FINALE</div>
+    <h2 class="grad">Make a Wish to the Cosmos ✨</h2>
+    <p class="sub">Send your heartfelt intention into the stars for Naina</p>
+
+    <div class="wish-box">
+      <div class="wish-pills">
+        <button class="wish-pill" data-wish="May your year be filled with laughter, endless peace, and radiant health! 🌸">🌸 Endless Peace &amp; Health</button>
+        <button class="wish-pill" data-wish="May every wild dream and secret goal you hold inside come true! 💫">💫 Dreams Coming True</button>
+        <button class="wish-pill" data-wish="May our bond grow sweeter, stronger, and more fun every single day! 💖">💖 Unbreakable Bond</button>
+        <button class="wish-pill" data-wish="May happiness follow you wherever you go, today and forever! 🌟">🌟 Pure Happiness</button>
+      </div>
+
+      <div class="wish-input-group">
+        <input type="text" id="wishInput" class="wish-input" placeholder="Or type your own personal wish here..." maxlength="120" aria-label="Your personal birthday wish">
+        <button class="btn btn-actionable" id="sendWishBtn">
+          <span>🚀 Cast Wish into the Stars ✨</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Finale Action Buttons -->
+    <div class="finale-actions">
+      <button class="btn btn-actionable btn-secondary" id="fireworksBtn">
+        <span>🎆 Launch Sky Fireworks Show</span>
+      </button>
+      <button class="btn btn-actionable btn-whatsapp" id="shareBtn">
+        <span>💖 Share This Surprise on WhatsApp</span>
+      </button>
+      <button class="btn btn-actionable btn-ghost" id="replayBtn">
+        <span>🔄 Experience From the Beginning</span>
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Crafted with endless love &amp; admiration for <strong>Naina</strong> ❤️</p>
+    <p class="footer-sub">May your year be as extraordinary as you are ✨</p>
+  </footer>
+</main>
+
+<!-- Floating Mobile Action Dock -->
+<div class="dock" id="dock" role="region" aria-label="Quick navigation controls">
+  <button id="dockHugBtn" class="dock-btn dock-btn-hug" aria-label="Send quick hug" title="Send a hug">
+    <span>❤️</span>
+  </button>
+  <button id="dockNavBtn" class="dock-btn dock-btn-nav" aria-label="Open chapter menu" title="Chapters menu">
+    <span>🧭</span>
+  </button>
+</div>
+
+<!-- Mobile Quick Jump Drawer Menu -->
+<div class="quick-nav-drawer" id="quickNavDrawer" hidden>
+  <div class="drawer-header">
+    <span>Surprise Chapters ✨</span>
+    <button id="closeDrawerBtn" aria-label="Close menu">✕</button>
+  </div>
+  <div class="drawer-links">
+    <a href="#count" class="drawer-link"><span>⏳</span> Chapter 1: The Countdown</a>
+    <a href="#bday" class="drawer-link" id="drawerBdayLink"><span>🎂</span> Chapter 2: Cake Ceremony</a>
+    <a href="#gallery" class="drawer-link"><span>📸</span> Chapter 3: Our Moments</a>
+    <a href="#memories" class="drawer-link"><span>⏳</span> Chapter 4: Memory Timeline</a>
+    <a href="#letterSec" class="drawer-link"><span>💌</span> Chapter 5: Heartfelt Letter</a>
+    <a href="#couponsSec" class="drawer-link"><span>🎟️</span> Chapter 6: Birthday Coupons</a>
+    <a href="#surprise" class="drawer-link"><span>🎁</span> Chapter 7: Mystery Gift</a>
+    <a href="#wishSec" class="drawer-link"><span>🌟</span> Grand Finale: Cosmic Wish</a>
+  </div>
+</div>
+
+<!-- Toast Feedback -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Mobile-Friendly Lightbox -->
+<div id="lightbox" hidden tabindex="-1" role="dialog" aria-modal="true" aria-label="Photo view">
+  <button class="lbc" id="lbClose" aria-label="Close view">✕</button>
+  <button class="lbn lbp" id="lbPrev" aria-label="Previous photo">‹</button>
+  <figure>
+    <img alt="Enlarged photo">
+    <figcaption></figcaption>
+  </figure>
+  <button class="lbn lbx" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<script src="js/countdown.js?v=20261124_nosound"></script>
+<script src="js/animations.js?v=20261124_nosound"></script>
+<script src="js/gallery.js?v=20261124_nosound"></script>
+<script src="js/main.js?v=20261124_nosound"></script>
+</body>
+</html>
